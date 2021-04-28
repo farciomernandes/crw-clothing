@@ -23,7 +23,7 @@ class App extends React.Component {
     const { setCurrentUser } = this.props;
 
     //This is called where component is reload
-    this.unsubscribeFrom = auth.onAuthStateChanged(async(userAuth) => {
+    /*this.unsubscribeFrom = auth.onAuthStateChanged(async(userAuth) => {
       if(userAuth){
         const userRef = await createUserProfileDocument(userAuth);
       
@@ -37,13 +37,11 @@ class App extends React.Component {
 
       }
 
-      setCurrentUser(userAuth);
+      setCurrentUser(userAuth); */
         
       }
 
-    )
-
-  }
+  
 
   //Use this to reset variables or overwrite variables.
   componentWillUnmount(){
@@ -77,9 +75,7 @@ class App extends React.Component {
       </div>
     );
   }
-  
 }
-
 const mapStateProps = createStructuredSelector({
   currentUser: selectCurrentUser,
 })

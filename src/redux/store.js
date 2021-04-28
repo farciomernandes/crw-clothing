@@ -7,6 +7,7 @@ import { fetchCollectionsStart } from './shop/shop.sagas';
 
 //This file is all different data together on a router.
 import rootReducer from './root-reducer';
+import rootSaga from './root-saga.js';
 
 const sagaMiddlewares = createSagaMiddleware();
 
@@ -21,6 +22,6 @@ if (process.env.NODE_ENV === 'development') {
 //Create the Store with all data of your app.
 export const store = createStore(rootReducer, applyMiddleware(...middlewares));
 
-sagaMiddlewares.run(fetchCollectionsStart);
+sagaMiddlewares.run(rootSaga);
 
 export const persistor = persistStore(store);
